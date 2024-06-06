@@ -3,3 +3,14 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
+article {
+	display: flex;
+	width: 600px;
+	height: 700px;
+	background-color: lightgray;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 150px;
+	border-radius: 10px;
+}
