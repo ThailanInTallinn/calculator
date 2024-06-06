@@ -52,3 +52,18 @@ button {
 	transition: 0.3s;
 	background-color: steelblue;
 }
+
+#operators-container {
+	display: flex;
+	width: 144px;
+	flex-direction: column;
+	justify-content: space-evenly;
+	row-gap: 8px;
+}
+
+#operators-container button {
+	width: 92%;
+	height: 22%;
+	font-size: 34px;
+	border: 0;
+}
