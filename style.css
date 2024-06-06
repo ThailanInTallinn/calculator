@@ -20,7 +20,9 @@ article {
 
 #buttons-container {
 	display: flex;
-	width: 95%;
+	width: 96%;
 	height: 70%;
 	background-color: black;
+	margin-bottom: 2%;
+	border-radius: 10px;
 }
