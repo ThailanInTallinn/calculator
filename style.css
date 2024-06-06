@@ -40,9 +40,15 @@ article {
 	height: 22%;
 	background-color: grey;
 	font-size: 34px;
+	transition: 0.3s;
 }
 
 button {
 	border-radius: 10px;
 	cursor: pointer;
+}
+
+#numbers-container button:hover {
+	transition: 0.3s;
+	background-color: steelblue;
 }
