@@ -13,4 +13,5 @@ article {
 	margin-left: auto;
 	margin-top: 150px;
 	border-radius: 10px;
+	user-select: none;
 }
