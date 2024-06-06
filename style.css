@@ -66,6 +66,13 @@ button {
 	height: 22%;
 	font-size: 34px;
 	border: 0;
+	transition: 0.3s;
+}
+
+#operators-container button:active {
+	background-color: purple;
+	color: white;
+	transition: 0.3s;
 }
 
 #display {
