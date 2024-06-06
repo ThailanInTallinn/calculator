@@ -41,3 +41,8 @@ article {
 	background-color: grey;
 	font-size: 34px;
 }
+
+button {
+	border-radius: 10px;
+	cursor: pointer;
+}
