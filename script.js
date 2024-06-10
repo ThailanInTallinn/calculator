@@ -24,7 +24,12 @@ function divide(a, b) {
 
 buttonsContainer.addEventListener("click", (e) => {
 	if (e.target.classList.contains("numbers-button")) {
-		inputOperand(e.target.textContent);
+		if (Number(display.textContent) === totalResult) {
+			display.textContent = "";
+			inputOperand(e.target.textContent);
+		} else {
+			inputOperand(e.target.textContent);
+		}
 	} else if (e.target.textContent != "=" && !e.target.classList.contains("numbers-button")) {
 		inputOperator(e.target.textContent);
 	} else {
