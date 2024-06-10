@@ -5,6 +5,7 @@ let firstOperand = "";
 let secondOperand = "";
 let firstOperandNumber = null;
 let secondOperandNumber = null;
+let totalResult = 0;
 function sum(a, b) {
 	return a + b;
 }
@@ -28,9 +29,6 @@ buttonsContainer.addEventListener("click", (e) => {
 	} else {
 		inputOperator(e.target.textContent);
 	}
-	console.log(firstOperandNumber);
-	console.log(secondOperandNumber);
-	console.log(operator);
 });
 
 function inputOperand(operand) {
