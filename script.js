@@ -23,13 +23,17 @@ function divide(a, b) {
 }
 
 buttonsContainer.addEventListener("click", (e) => {
-	if (Number(e.target.textContent)) {
+	if (e.target.classList.contains("numbers-button")) {
 		display.textContent += `${e.target.textContent}`;
 		inputOperand(e.target.textContent);
 	} else if (e.target.textContent != "=") {
 		inputOperator(e.target.textContent);
 	} else {
-		operate(firstOperandNumber, secondOperandNumber, operator);
+		display.textContent = "";
+		totalResult = operate(firstOperandNumber, secondOperandNumber, operator);
+		console.log(totalResult);
+		display.textContent = `${totalResult}`;
+		firstOperandNumber = totalResult;
 	}
 });
 
@@ -38,6 +42,8 @@ function inputOperand(operand) {
 		firstOperand += operand;
 		firstOperandNumber = Number(firstOperand);
 	} else {
+		display.textContent = "";
+		display.textContent += operand;
 		secondOperand += operand;
 		secondOperandNumber = Number(secondOperand);
 	}
