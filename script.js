@@ -24,9 +24,8 @@ function divide(a, b) {
 
 buttonsContainer.addEventListener("click", (e) => {
 	if (e.target.classList.contains("numbers-button")) {
-		display.textContent += `${e.target.textContent}`;
 		inputOperand(e.target.textContent);
-	} else if (e.target.textContent != "=") {
+	} else if (e.target.textContent != "=" && !e.target.classList.contains("numbers-button")) {
 		inputOperator(e.target.textContent);
 	} else {
 		display.textContent = "";
@@ -39,13 +38,36 @@ buttonsContainer.addEventListener("click", (e) => {
 
 function inputOperand(operand) {
 	if (operator === null) {
+		display.textContent += `${operand}`;
 		firstOperand += operand;
 		firstOperandNumber = Number(firstOperand);
+		console.log(firstOperandNumber);
 	} else {
-		display.textContent = "";
-		display.textContent += operand;
-		secondOperand += operand;
-		secondOperandNumber = Number(secondOperand);
+		if (secondOperand.length == 0) {
+			display.textContent = "";
+			if (firstOperandNumber === totalResult) {
+				display.textContent += operand;
+				secondOperand += operand;
+				secondOperandNumber = Number(secondOperand);
+			} else {
+				display.textContent += operand;
+				secondOperand += operand;
+				secondOperandNumber = Number(secondOperand);
+				console.log(secondOperandNumber);
+			}
+		} else {
+			if (firstOperandNumber === totalResult) {
+				display.textContent += operand;
+				secondOperand += operand;
+				secondOperandNumber = Number(secondOperand);
+			} else {
+				display.textContent += operand;
+				secondOperand += operand;
+				secondOperandNumber = Number(secondOperand);
+				console.log(secondOperandNumber);
+			}
+		}
+
 	}
 };
 
@@ -64,7 +86,8 @@ function inputOperator(chosenOperator) {
 			operator = "/";
 			break;
 	}
-}
+	console.log(operator);
+};
 
 function operate(a, b, operation) {
 	switch (operation) {
@@ -77,4 +100,5 @@ function operate(a, b, operation) {
 		case "/":
 			return divide(a, b);
 	}
+
 }
