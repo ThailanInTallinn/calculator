@@ -29,6 +29,7 @@ buttonsContainer.addEventListener("click", (e) => {
 	} else if (e.target.textContent != "=") {
 		inputOperator(e.target.textContent);
 	} else {
+		operate(firstOperandNumber, secondOperandNumber, operator);
 	}
 });
 
@@ -56,5 +57,18 @@ function inputOperator(chosenOperator) {
 		case "/":
 			operator = "/";
 			break;
+	}
+}
+
+function operate(a, b, operation) {
+	switch (operation) {
+		case "+":
+			return sum(a, b);
+		case "-":
+			return subtract(a, b);
+		case "*":
+			return multiply(a, b);
+		case "/":
+			return divide(a, b);
 	}
 }
