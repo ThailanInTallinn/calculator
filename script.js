@@ -26,6 +26,7 @@ buttonsContainer.addEventListener("click", (e) => {
 		inputOperand(e.target.textContent);
 		console.log(firstOperandNumber);
 	} else {
+		inputOperator(e.target.textContent);
 	}
 });
 
@@ -39,3 +40,19 @@ function inputOperand(operand) {
 	}
 };
 
+function inputOperator(operator) {
+	switch (operator) {
+		case "+":
+			operator = "+";
+			break;
+		case "-":
+			operator = "-";
+			break;
+		case "x":
+			operator = "*";
+			break;
+		case "/":
+			operator = "/";
+			break;
+	}
+}
