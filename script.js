@@ -26,8 +26,9 @@ buttonsContainer.addEventListener("click", (e) => {
 	if (Number(e.target.textContent)) {
 		display.textContent += `${e.target.textContent}`;
 		inputOperand(e.target.textContent);
-	} else {
+	} else if (e.target.textContent != "=") {
 		inputOperator(e.target.textContent);
+	} else {
 	}
 });
 
