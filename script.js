@@ -2,8 +2,9 @@ const display = document.querySelector("p");
 const buttonsContainer = document.querySelector("#buttons-container");
 let operator = null;
 let firstOperand = "";
-let secondOperand = null;
+let secondOperand = "";
 let firstOperandNumber = null;
+let secondOperandNumber = null;
 function sum(a, b) {
 	return a + b;
 }
@@ -24,10 +25,12 @@ buttonsContainer.addEventListener("click", (e) => {
 	if (Number(e.target.textContent)) {
 		display.textContent += `${e.target.textContent}`;
 		inputOperand(e.target.textContent);
-		console.log(firstOperandNumber);
 	} else {
 		inputOperator(e.target.textContent);
 	}
+	console.log(firstOperandNumber);
+	console.log(secondOperandNumber);
+	console.log(operator);
 });
 
 function inputOperand(operand) {
@@ -40,8 +43,8 @@ function inputOperand(operand) {
 	}
 };
 
-function inputOperator(operator) {
-	switch (operator) {
+function inputOperator(chosenOperator) {
+	switch (chosenOperator) {
 		case "+":
 			operator = "+";
 			break;
