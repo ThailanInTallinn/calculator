@@ -48,31 +48,16 @@ function inputOperand(operand) {
 		firstOperandNumber = Number(firstOperand);
 		console.log(firstOperandNumber);
 	} else {
-		if (secondOperand.length == 0) {
+		if (secondOperand == "") {
 			display.textContent = "";
-			if (firstOperandNumber === totalResult) {
-				display.textContent += operand;
-				secondOperand += operand;
-				secondOperandNumber = Number(secondOperand);
-			} else {
-				display.textContent += operand;
-				secondOperand += operand;
-				secondOperandNumber = Number(secondOperand);
-				console.log(secondOperandNumber);
-			}
+			display.textContent = operand;
+			secondOperand += operand;
+			secondOperandNumber = Number(secondOperand);
 		} else {
-			if (firstOperandNumber === totalResult) {
-				display.textContent += operand;
-				secondOperand += operand;
-				secondOperandNumber = Number(secondOperand);
-			} else {
-				display.textContent += operand;
-				secondOperand += operand;
-				secondOperandNumber = Number(secondOperand);
-				console.log(secondOperandNumber);
-			}
+			display.textContent += operand;
+			secondOperand += operand;
+			secondOperandNumber = Number(secondOperand);
 		}
-
 	}
 };
 
@@ -107,3 +92,4 @@ function operate(a, b, operation) {
 	}
 
 }
+
