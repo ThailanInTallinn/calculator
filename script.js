@@ -5,7 +5,7 @@ let firstOperand = "";
 let secondOperand = "";
 let firstOperandNumber = null;
 let secondOperandNumber = null;
-let totalResult = 0;
+let totalResult = null;
 function sum(a, b) {
 	return a + b;
 }
@@ -34,10 +34,17 @@ buttonsContainer.addEventListener("click", (e) => {
 		inputOperator(e.target.textContent);
 	} else {
 		display.textContent = "";
-		totalResult = operate(firstOperandNumber, secondOperandNumber, operator);
-		console.log(totalResult);
-		display.textContent = `${totalResult}`;
-		firstOperandNumber = totalResult;
+		if (totalResult != null) {
+			totalResult = operate(totalResult, secondOperandNumber, operator);
+			secondOperand = "";
+			secondOperandNumber = null;
+			display.textContent = `${totalResult}`;
+		} else {
+			totalResult = operate(firstOperandNumber, secondOperandNumber, operator);
+			secondOperand = "";
+			secondOperandNumber = null;
+			display.textContent = `${totalResult}`;
+		}
 	}
 });
 
@@ -46,11 +53,16 @@ function inputOperand(operand) {
 		display.textContent += `${operand}`;
 		firstOperand += operand;
 		firstOperandNumber = Number(firstOperand);
-		console.log(firstOperandNumber);
 	} else {
-		if (secondOperand == "") {
+		if (secondOperand == "" && totalResult === firstOperandNumber) {
 			display.textContent = "";
 			display.textContent = operand;
+			secondOperand = "";
+			secondOperand += operand;
+			secondOperandNumber = Number(secondOperand);
+		} else if (secondOperand == "") {
+			display.textContent = "";
+			display.textContent += operand;
 			secondOperand += operand;
 			secondOperandNumber = Number(secondOperand);
 		} else {
@@ -76,7 +88,6 @@ function inputOperator(chosenOperator) {
 			operator = "/";
 			break;
 	}
-	console.log(operator);
 };
 
 function operate(a, b, operation) {
